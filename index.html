@@ -23,10 +23,15 @@
 
 <body class="">
     
+    <!-- -------- HEADER APP -------- -->
 
     <header id="appHeader" class="">
             <h1 class=""> App de tareas </h1>
     </header>
+
+
+
+    <!-- ------ CONTAINER ICONS FUCTION ------ -->
 
     <main class="">
         <div id="containerBoxIcon" class="">
@@ -41,6 +46,12 @@
              </div>
         </div>
 
+
+     <!-- ----- CONTAINER CARDS TAKS STATUS ----- -->
+
+
+     <!-- CARD TASK TO DO -->
+
     <div id="containerCard" class="">
 
         <section class="card " id="taskToDo">
@@ -49,69 +60,39 @@
             </div>
 
             <div class="containerTask " id="containerTaskToDo">
-                <div class="taskHeader moodLigth">
-                    <div class="dateTask moodLigth">
-                        <p class="moodLigth">domingo 22, 2023</p>
-                    </div>
-                    <div class="iconTask moodLigth">
-                        <i class="fa-solid fa-pen moodLigth"></i>
-                        <i class="fa-solid fa-trash moodLigth"></i>
-                        <i class="fa-solid fa-check moodLigth"></i>
-                    </div>
-                </div>
-                <div class="task moodLigth">
-                    <p class="moodLigth">Soy una Tarea</p>
-                </div>
+                
             </div>
         </section>
+
+        <!-- CARD TASK IN PROGRESS -->
 
         <section class="card " id="taskInProgress">
             <div class="status  moodLigth">
                 <h2 class="">En progreso</h2>
             </div>
             <div class="containerTask" id="containerTaskInProgress">
-                <div class="taskHeader moodLigth">
-                    <div class="dateTask moodLigth">
-                        <p class="moodLigth">domingo 22, 2023</p>
-                    </div>
-                    <div class="iconTask moodLigth">
-                        <i class="moodLigth fa-solid fa-pen "></i>
-                        <i class="fa-solid fa-trash moodLigth"></i>
-                        <i class="fa-solid fa-check moodLigth"></i>
-                    </div>
-                </div>
-                <div class="task">
-                    <p>Soy una Tarea</p>
-                </div>
+                
             </div>
         </section>
 
-        <section class="card" id="taskComplete">
+        <!-- CARD TASK COMPLETE -->
 
-            
+        <section class="card" id="taskComplete">
             <div class="status  moodLigth">
                 <h2 class="">Terminada</h2>
             </div>
-
             <div class="containerTask" id="containerTaskComplete">
-                <div class="taskHeader">
-                    <div class="dateTask">
-                        <p>domingo 22, 2023</p>
-                    </div>
-                    <div class="iconTask">
-                        <i class="fa-solid fa-pen"></i>
-                        <i class="fa-solid fa-trash"></i>
-                        <i class="fa-solid fa-check"></i>
-                    </div>
-                </div>
-                <div class="task">
-                    <p>Soy una Tarea</p>
-                </div>
-            </div>
             
+            </div>
         </section>
 
     </div>
+
+
+    <!--  ------- SECTIONS CONTAINERS MODALS  -------- -->
+
+
+    <!-- MODALS SEARCH -->
 
     <section class="containerModalSearch displayNone">
         <div id="modalSearch">
@@ -124,6 +105,10 @@
         </div>
     </section>
 
+
+
+
+    <!-- MODAL ADD TASK -->
 
     <section class="containerModalAddTask displayNone">
         <div id="modalAddTask">
@@ -145,6 +130,8 @@
             </form>
         </div>
     </section>
+
+    <!-- MODAL EDIT TASK -->
 
     <section class="containerModalEditTask displayNone ">
         <div id="modalEditTask">

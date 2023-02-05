@@ -53,13 +53,11 @@ window.addEventListener('load', () => {
     const $taskInProgress = $("#taskInProgress")
     const $taskComplete = $("#taskComplete")
     const $appHeader = $("#appHeader")
-    const $dateHeader = $("#dateHeader")
     const $search = $("#search")
     const $containerModalSearch = $(".containerModalSearch")
     const $closeModalSearch = $("#closeModalSearch")
     const $btnSearch = $("#btnSearch")
     const $wordSearch = $("#wordSearch")
-    const $$containerTask = Array.from($$(".containerTask"))
     const $containerModalAddTask = $(".containerModalAddTask")
     const $refresh = $("#refresh")
     const $add = $("#add")
@@ -70,7 +68,6 @@ window.addEventListener('load', () => {
     const $selectStatus = $("#selectStatus")
     const $errorStatus = $("#errorStatus")
     const $btnAdd = $("#btnAdd")
-    const $formAdd = $("#formAdd")
     const $formSearch = $("#formSearch")
     const $errorTitleEdit = $("#errorTitleEdit")
     const $closeModalEdit = $("#closeModalEdit")
@@ -93,7 +90,8 @@ window.addEventListener('load', () => {
 
     // FUNCIONES ---------------------------------------------------------------------------
     
-    // ------------- VALUE ------- ----------------
+    // ---- VALUE -----
+
     const value = () => {
         valueSearch = $wordSearch.value
         valueAdd = $addTitleTask.value
@@ -101,10 +99,15 @@ window.addEventListener('load', () => {
         valueEdit = $editTitleTask.value
     }
     
-    
+    // ---- DATE ---
+
     const date = (day) => {
         return `${days[day[0]]} ${day[1]},  ${month[day[2]]} ${day[3]}`
     }
+    
+    
+    // -- CREATE CARDS ---
+
     const filterTask = (estatus, array) => {
         return array.filter(tarea => tarea.estado.toLowerCase() === estatus.toLowerCase())
     }
@@ -151,20 +154,7 @@ window.addEventListener('load', () => {
     `
         })
     }
-
-    const paint = () => {
-        const allTaskToDo = filterTask("pendiente", tareas)
-        const allTaskInProgress = filterTask("en progreso", tareas)
-        const allTaskComplete = filterTask("terminado", tareas)
-
-        $containerTaskToDo.innerHTML = ""
-        $containerTaskInProgress.innerHTML = ""
-        $containerTaskComplete.innerHTML = ""
-
-        createCard($containerTaskToDo, allTaskToDo)
-        createCard($containerTaskInProgress, allTaskInProgress)
-        createCardComplete($containerTaskComplete, allTaskComplete)
-
+    const addEvent = () => {
         const $$delete = $$(".fa-trash")
         $$delete.forEach(icon => icon.addEventListener("click", (e) => {
             tareas = tareas.filter(tarea => tarea.id !== Number(icon.parentNode.id))
@@ -187,7 +177,6 @@ window.addEventListener('load', () => {
 
         const $$check = $$(".fa-check")
         $$check.forEach(icon => icon.addEventListener("click", (e) => {
-            console.log("hosd")
             select = tareas.filter(tarea => tarea.id === Number(icon.parentNode.id))
             for (const tarea of tareas) {
                 if (tarea.id === Number(icon.parentNode.id)) {
@@ -200,6 +189,23 @@ window.addEventListener('load', () => {
             }
             paint()
         }))
+
+    }
+
+    const paint = () => {
+        const allTaskToDo = filterTask("pendiente", tareas)
+        const allTaskInProgress = filterTask("en progreso", tareas)
+        const allTaskComplete = filterTask("terminado", tareas)
+
+        $containerTaskToDo.innerHTML = ""
+        $containerTaskInProgress.innerHTML = ""
+        $containerTaskComplete.innerHTML = ""
+
+        createCard($containerTaskToDo, allTaskToDo)
+        createCard($containerTaskInProgress, allTaskInProgress)
+        createCardComplete($containerTaskComplete, allTaskComplete)
+        addEvent()
+        
     }
 
 
@@ -217,7 +223,10 @@ window.addEventListener('load', () => {
         createCard($containerTaskToDo, searchToDo);
         createCard($containerTaskInProgress, searchInProgress);
         createCardComplete($containerTaskComplete, searchComplete);
+        addEvent()
+        
     }
+
 
     //  ----   Add Task -----
 
@@ -303,9 +312,10 @@ window.addEventListener('load', () => {
     $btnSearch.addEventListener("click", (e) => {
         value();
         paintSearch(valueSearch);
-        $wordSearch.value = "";
+        valueSearch = "";
         $containerModalSearch.classList.add("displayNone");
     })
+
 
     $refresh.addEventListener("click", (e) => {
         paint();
@@ -315,6 +325,8 @@ window.addEventListener('load', () => {
         $containerModalAddTask.classList.remove("displayNone");
         $addTitleTask.value = "";
         $selectStatus.value = "";
+        errorsStatus = false;
+        errorsTitle = false;
         
     })
 
@@ -357,10 +369,9 @@ window.addEventListener('load', () => {
             for (const tarea of tareas) {
                 if (tarea.id === select[0].id) {
                     tarea.titulo = valueEdit;
-                    console.log(valueEdit)
-                    if (valueEdit === "toDo") {
+                    if ($editStatus.value === "toDo") {
                         tarea.estado = "Pendiente";
-                    } else if (valueEdit === "inProgress") {
+                    } else if ($editStatus.value === "inProgress") {
                         tarea.estado = "En progreso"
                     } else {
                         tarea.estado = "Terminado"
@@ -384,19 +395,20 @@ window.addEventListener('load', () => {
 
 
     // ----       MOOD LIGHT    ----
+
     $btnLigth.addEventListener("click", (e) => {
+        
         const $$h2 = $$("h2")
         const $modalSearch = $("#modalSearch")
         const $$containerTask = $$(".containerTask")
         const $modalAddTask = $("#modalAddTask")
         const $formAdd = $("#formAdd")
         const $boxAddTitle = $("#boxAddTitle")
-        // const $errorTitleTask = $("#errorTitleTask")
         const $$label = $$("label")
         const $modalEditTask = $("#modalEditTask")
         const $formEdit = $("#formEdit")
         const $boxEditTitle = $("#boxEditTitle")
-        // const $errorTitleEdit = $("#errorTitleEdit")
+    
     
         $body.classList.toggle("ligth");
         $appHeader.classList.toggle("moodLigth");
@@ -412,10 +424,8 @@ window.addEventListener('load', () => {
         $taskInProgress.classList.toggle("ligth");
         $taskComplete.classList.toggle("ligth");
         $modalSearch.classList.toggle("modalLight");
-        $closeModalSearch.classList.toggle("whiteBg");
         $formSearch.classList.toggle("moodLigth");
         toggleF($$label, "moodLigth");
-        $btnSearch.classList.toggle("whiteBg");
         $modalAddTask.classList.toggle("modalLight");
         $closeModalAdd.classList.toggle("whiteBg");
         $formAdd.classList.toggle("moodLigth");
