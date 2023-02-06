@@ -1,0 +1,464 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Special Elite', cursive;
+    margin: 0%;
+    padding: 2%;
+    color: white;
+    background-color: #111;
+}
+
+body {
+    width: 100%;
+    background-color: black;
+    border-radius: 5px;
+}
+
+/* ----------      HEADER  APP      ------------- */
+
+#appHeader {
+    width: 98%;
+    margin: 1%;
+    padding: 1%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+
+h1 {
+    text-decoration: underline;
+    font-size: 170%;
+    font-family: 'Rock Salt', cursive;
+    font-weight: 900;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 13px #51eb5e, 0 0 15px #51eb5e, 0 0 23px #51eb5e;
+}
+
+#search {
+    width: 50%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    border: 2px solid white;
+    box-shadow: 0px 4px 4px 0px #D6D6D6, 0px -4px 4px 0px #D6D6D6;
+    border-radius: 5px;
+    padding: 0%;
+}
+
+
+/* -------------     MAIN ------------------ */
+
+main {
+    width: 98%;
+    margin: 2% 1% 2% 1%;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+#containerBoxIcon {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#boxIcon {
+    width: 50%;
+    padding: 1%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* ---------     SECTION CARDS ------------ */
+
+#containerCard {
+    width: 98%;
+    margin: 3% 1% 1% 1%;
+    padding: 0%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: black;
+    border: 2px solid grey;
+    border-radius: 5px;
+    box-shadow: 0px 5px 3px 3px #D6D6D6, 3px 3px 3px 0px #D6D6D6;
+    padding: 1%;
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition-property: transform;
+    transition-duration: 2s;
+}
+
+
+.iconCard {
+    background-color: black;
+    font-size: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.status {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+h2 {
+    background-color: black;
+}
+
+.containerTask {
+    margin: 4% 1% 4% 1%;
+    padding: 0%;
+    width: 95%;
+    border: 2px solid gray;
+    box-shadow: 9px 9px 6px 0px rgba(37, 36, 36, 0.75);
+}
+
+.taskHeader {
+    background-color: rgb(232, 232, 232);
+    color: #111;
+    border-bottom: 2px solid rgb(46, 197, 40);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 85%;
+    
+}
+
+.iconTask {
+    border-radius: 0px 5px 5px 0px;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.dateTask {
+    border-radius: 5px 0px 0px 5px;
+    width: 50%;
+}
+
+.task {
+    background-color: rgb(232, 232, 232);
+    color: #111;
+    padding: 4%;
+    text-align: center;
+    font-size: 150%;
+}
+
+.task p {
+    background-color: rgb(232, 232, 232);
+    color: #111;
+    margin: 3% 0% 3% 0%;
+}
+
+.fa-solid {
+    margin: 2%;
+    padding: 2%;
+    background-color: black;
+}
+
+.iconTask .fa-solid,
+#search .fa-solid {
+    background-color: #111;
+    margin: 3%;
+    font-size: 80%;
+}
+.fa-circle {
+    color: rgb(46, 197, 40);
+}
+
+#refresh, #add, #btnLigth {
+    font-size: 120%;
+    margin: 0% 2% 0% 2%;
+    padding: 1%;
+    border: 1px solid white ;
+    border-radius: 5px;
+    
+}
+
+#wordSearch {
+    border-radius: 50px;
+}
+
+/* ---------   CARDS :HOVER       ------------ */
+
+.card:hover {
+    transform: scale(1.2) translate(0px, -20px);
+}
+
+
+/* --------      @MEDIA  MAIN    ------------- */
+
+@media (max-width:700px) {
+    #containerCard {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .card {
+        width: 60%;
+        margin: 3% 0% 3% 0%;
+    }
+
+}
+
+@media (max-width:550px) {
+    #appHeader {
+        padding: 2%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #dateHeader {
+        display: none;
+    }
+
+    #search {
+        width: 40%;
+        padding: 2%;
+    }
+
+    .card {
+        width: 70%;
+        margin-top: 8%;
+    }
+
+    .card:hover {
+        transform: none;
+    }
+
+}
+
+@media (max-width:390px) {
+    
+
+    #titleHeader {
+        width: 60%;
+    }
+
+    #search {
+        width: 50%;
+        box-shadow: none;
+        font-size: 90%;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    #containerBoxIcon{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #boxIcon {
+        justify-content: space-around;
+        margin-top: 6%;
+    }
+}
+
+@media (max-width:284px) {
+    #appHeader h1 {
+        text-align: center;
+    }
+}
+
+
+
+/* -------------   MODALS    ---------------- */
+
+
+
+.containerModalSearch, .containerModalAddTask, .containerModalEditTask {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.505);
+    top: 0;
+    display: block;
+    opacity: 1;
+    pointer-events: all;
+    transition: all 1.5s ease-in-out;
+}
+
+#modalSearch, #modalAddTask, #modalEditTask {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 50%;
+    background-color: rgba(17, 17, 17, 0.749);
+    padding: 2%;
+    border-radius: 15px;
+    border: 3px black solid;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+}
+
+#closeModalSearch, #closeModalAdd, #closeModalEdit {
+    background-color: black;
+    align-self: flex-end;
+    font-size: 120%;
+    padding: 1%;
+    border-radius: 5px;
+    height: 7%;
+    width: 7%;
+}
+
+#formSearch {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+}
+
+#wordSearch {
+   margin: 3% 0% 3% 0%;
+}
+
+.titleModal {
+    font-size: 130%;
+}
+
+#btnSearch {
+    background-color: black;
+    font-size: 120%;
+    margin-left: 5%;
+    padding: 1%;
+    border-radius: 5px;
+    height: 7%;
+    width: 7%;
+}
+
+#boxAddTitle, #boxEditTitle {
+    width: 100%;
+    background-color: rgba(17, 17, 17, 0.749);
+    display: flex;
+}
+
+#addTitleTask, #editTitleTask {
+    font-size: 120%;
+    border-radius: 50px;
+}
+
+#formAdd, #formEdit {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 2%;
+    background-color: rgba(17, 17, 17, 0.749);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#selectStatus , #btnAdd, #editStatus, #btnEdit {
+    align-self: flex-end;
+    margin: 5% 5% 0% 5%;
+    font-size: 120%;
+    border-radius: 50px;
+}
+
+#btnAdd, #btnEdit{
+    border: 2px solid white;
+    box-shadow: 0px 4px 4px 0px #D6D6D6, 0px -4px 4px 0px #D6D6D6;
+}
+
+
+#errorStatus, #errorTitleTask, #errorTitleEdit {
+    color: red;
+    font-size: 110%;
+    align-self: flex-end;
+    margin: 2% 2% 0% 0%;
+}
+
+/* ----------  MODALS @MEDIA ------------ */
+
+@media (max-width:1200px) {
+    #boxAddTitle, #formSearch, #boxEditTitle{
+        flex-direction: column;
+    }
+    #btnSearch{
+        padding: 2%;
+        width: 20%;
+    }
+}
+
+@media (max-width:600px){
+    #modalSearch, #modalAddTask, #modalEditTask {
+        width: 80%;
+        top: 25%;
+        left: 10%;
+    }
+    .titleModal, #addTitleTask, #selectStatus , #btnAdd, #editTitleTask, #editStatus, #btnEdit {
+        font-size: 100%;
+    }
+    #btnAdd, #btnEdit {
+        box-shadow: none;
+    }
+    #closeModalSearch, #closeModalAdd, #closeModalEdit {
+        font-size: 90%;
+    }
+    #btnSearch{
+        margin-top: 3%;
+    }
+}
+
+
+
+/*  ------  CLASS ADD  -------  */
+
+.displayNone {
+    display: none;
+ }
+
+.ligth{
+    background-color: rgb(203, 201, 201)!important;
+    color: black!important;
+}
+
+.moodLigth  {
+    background-color: rgb(232, 232, 232)!important;
+    color: #111!important;
+    text-shadow: none;
+}
+.colorYellow {
+    color: yellow !important;
+    background-color: black!important;
+}
+.modalLight {
+    background-color: rgba(203, 201, 201, 0.841)!important;
+    color: #111;
+}
+.whiteBg {
+    background-color: white !important;
+    color: #111 !important;
+}
+.errosLight {
+    background-color: rgb(232, 232, 232)!important;
+    color: rgb(233, 21, 21)!important;
+    text-shadow: none;
+}

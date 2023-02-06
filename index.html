@@ -1,12 +1,160 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./CSS/styles.css" />
+
+    <script src="./JS/script.js" defer></script>
+
+    <link rel="icon" href="./img/logo.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Special+Elite&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>App de tareas</title>
 </head>
-<body>
+
+<body class="">
     
+    <!-- -------- HEADER APP -------- -->
+
+    <header id="appHeader" class="">
+            <h1 class=""> App de tareas </h1>
+    </header>
+
+
+
+    <!-- ------ CONTAINER ICONS FUCTION ------ -->
+
+    <main class="">
+        <div id="containerBoxIcon" class="">
+            <div id="search" class="">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p class="">Buscar palabra clave</p>
+            </div>
+            <div id="boxIcon" class="">
+            <i class="fa-solid fa-arrows-rotate " id="refresh"></i>
+            <i class="fa-solid fa-plus " id="add"></i>
+            <i class="fa-solid fa-lightbulb" id="btnLigth"></i>
+             </div>
+        </div>
+
+
+     <!-- ----- CONTAINER CARDS TAKS STATUS ----- -->
+
+
+     <!-- CARD TASK TO DO -->
+
+    <div id="containerCard" class="">
+
+        <section class="card " id="taskToDo">
+            <div class="status moodLigth">
+                <h2 class="">Pendiente</h2>
+            </div>
+
+            <div class="containerTask " id="containerTaskToDo">
+                
+            </div>
+        </section>
+
+        <!-- CARD TASK IN PROGRESS -->
+
+        <section class="card " id="taskInProgress">
+            <div class="status  moodLigth">
+                <h2 class="">En progreso</h2>
+            </div>
+            <div class="containerTask" id="containerTaskInProgress">
+                
+            </div>
+        </section>
+
+        <!-- CARD TASK COMPLETE -->
+
+        <section class="card" id="taskComplete">
+            <div class="status  moodLigth">
+                <h2 class="">Terminada</h2>
+            </div>
+            <div class="containerTask" id="containerTaskComplete">
+            
+            </div>
+        </section>
+
+    </div>
+
+
+    <!--  ------- SECTIONS CONTAINERS MODALS  -------- -->
+
+
+    <!-- MODALS SEARCH -->
+
+    <section class="containerModalSearch displayNone">
+        <div id="modalSearch">
+            <button type="button" id="closeModalSearch">X</button>
+            <form action="" id="formSearch">
+            <label for="" class="titleModal">Ingrese palabra clave</label>
+            <input type="text" id="wordSearch">
+            <button type="button" id="btnSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+           </form>
+        </div>
+    </section>
+
+
+
+
+    <!-- MODAL ADD TASK -->
+
+    <section class="containerModalAddTask displayNone">
+        <div id="modalAddTask">
+            <button type="button" id="closeModalAdd">X</button>
+            <form action="" id="formAdd">
+                <div id="boxAddTitle">
+                    <label for="" class="titleModal">Ingrese título de tarea</label>
+                    <input type="text" id="addTitleTask">
+                </div>
+                <p id="errorTitleTask"></p>
+                <select name="" id="selectStatus">
+                    <option value="" disabled selected="selected">Seleccione un estado</option>
+                    <option value="toDo">Pendiente</option>
+                    <option value="inProgress">En progreso</option>
+                    <option value="complete">Terminada</option>
+                </select>
+                <p id="errorStatus"></p>
+                <button id="btnAdd" type="button">Crear</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- MODAL EDIT TASK -->
+
+    <section class="containerModalEditTask displayNone ">
+        <div id="modalEditTask">
+            <button type="button" id="closeModalEdit">X</button>
+            <form action="" id="formEdit">
+                <div id="boxEditTitle">
+                    <label for="" class="titleModal">Modifique el título</label>
+                    <input type="text" id="editTitleTask">
+                </div>
+                <p id="errorTitleEdit"></p>
+                <select name="" id="editStatus">
+                    <option value="toDo">Pendiente</option>
+                    <option value="inProgress">En progreso</option>
+                    <option value="complete">Terminada</option>
+                </select>
+                <button id="btnEdit" type="button">Modificar</button>
+            </form>
+        </div>
+    </section>
+    
+
+</main>
+
 </body>
+
 </html>
